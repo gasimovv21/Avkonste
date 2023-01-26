@@ -10,7 +10,7 @@ SECRET_KEY = 'coevnf71tncg7+!zk+5g8&av$ad6vfjsr3m7jcj3r8fv1!^^@'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'avkonste.com', '165.232.92.251']
+ALLOWED_HOSTS = ['*', 'http://avkonste.com/',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,22 +53,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-# if DEBUG:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# else:
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'avkonste_db',
-        'USER': 'avkonste_admin',
-        'PASSWORD': 'backend123',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

@@ -8,7 +8,7 @@ load_dotenv()
 
 SECRET_KEY = 'coevnf71tncg7+!zk+5g8&av$ad6vfjsr3m7jcj3r8fv1!^^@'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'avkonste.com', '165.232.92.251']
 

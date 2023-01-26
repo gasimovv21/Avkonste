@@ -1,0 +1,197 @@
+
+@media screen and (max-width: 1280px )  {
+    
+    .brightness-text h2{
+       
+        font-size: 50px !important;
+        line-height: 50px !important;
+        
+    }
+} 
+
+@media (min-width:568px) and (max-width:768px){
+    #Section2 .info-box1{
+        border-top-right-radius: 0px !important;
+    }
+    #Section2 .info-box4{
+        border-bottom-left-radius: 0px !important;
+    }
+}
+@media (min-width:768px) and (max-width:1200px){
+    
+    #ServicesPage .service .left{
+        width: 50% !important;
+    }
+    #ServicesPage .service .right{
+        width: 50% !important;
+    }
+    #ServicesPage .service .right h2{
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+    #ServicesPage .service2 .left h2{
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+    #ServicesPage .service .right p{
+        font-size: 12px !important;
+        
+    }
+    #ServicesPage .service2 .left p{
+        font-size: 12px !important;
+    }
+    #ServicesPage .service2 .left{
+        width: 50% !important;
+    }
+    #ServicesPage .service2 .right{
+        width: 50% !important;
+    }
+    #ServicesPage .service img{
+        border-top-right-radius: 20px !important;
+        border-bottom-left-radius: 0px !important;
+
+    }
+    
+}
+/* @media (min-width:768px) and (max-width:1400px){
+    #AboutPage .left{
+        width: 30% !important;
+        text-align: center !important;
+    }
+    #AboutPage .right{
+        width: 70% !important;
+        
+    }
+} */
+
+
+@media (min-width:320px) and (max-width:400px){
+    #ServicesPage h3{
+        font-size: 36px!important;
+    }
+}
+/* TABLETDEN BALACA */
+@media  (max-width: 768px) {
+    .dots{
+        display: none;       
+    }
+    #SectionFooter .right .contact-us-mini-info p{
+        font-size: 20px !important;
+    }
+    .headerall{
+        display: none !important;
+    }
+    .mobile-header{
+        display: flex !important;
+    }
+    .brightness-text{
+        padding: 0px 0px !important;
+    }
+    .brightness-text h2{
+        font-size: 20px !important;
+        padding-bottom: 0px !important;
+    }
+    .carousel{
+        height: 40vh !important;
+    }
+    .carousel-button {
+        width: 18px;
+        height: 18px;
+    }
+   .info-box1{
+    border-radius: 20px 20px 0px 0px !important;
+   }
+   .info-box4{
+    border-radius: 0px 0px 20px 20px !important;
+   }
+    .info-box-img{
+        margin-bottom: 5px !important;
+        width: 48px !important;
+        height: 48px !important;
+        
+    }
+    .info-box-text h4{
+        margin-bottom: 10px !important;
+        
+        font-size: 16px !important;
+        line-height: 20px !important;
+        
+    }
+    #Section3 h3{
+        font-size: 30px !important;
+    }
+    #Section3 .right{
+        padding: 20px !important;
+    }
+    #Section3 .mini-box{
+        margin: 10px 0px !important;
+    }
+    .about-mini-info{
+        justify-content: space-between;
+    }
+    #ServicesPage .service .left{
+        width: 100% !important;
+    }
+    #ServicesPage .service .right{
+        width: 100% !important;
+    }
+    #ServicesPage .service2 .left{
+        width: 100% !important;
+    }
+    #ServicesPage .service2 .right{
+        width: 100% !important;
+    }
+    #ServicesPage .service img{
+        border-top-right-radius: 20px !important;
+        border-bottom-left-radius: 0px !important;
+
+    }
+    #ServicesPage .service2 img {
+        border-top-right-radius: 0px !important;
+        border-bottom-left-radius: 20px !important;
+
+    }
+    #ServicesPage .service .right h2{
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+    #ServicesPage .service2 .left h2{
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+    #ServicesPage .service .right p{
+        font-size: 12px !important;
+        
+    }
+    #ServicesPage .service2 .left p{
+        font-size: 12px !important;
+    }
+
+    
+    
+    #AboutPage .flip-card1{
+        margin-bottom: 240px !important;
+    }
+    #AboutPage .left{
+        text-align: center !important;
+        margin-bottom: 50px !important;
+    }
+    #AboutPage {
+        padding-top: 100px !important;
+    }
+
+
+    .reverseforservices{
+        border-radius: 20px !important;
+        
+        flex-flow: column !important;
+        
+      }
+      .reverseforservices img{
+        border-top-right-radius: 20px !important;
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        }
+}
+

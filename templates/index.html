@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avkonste</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="icon" href="../static/img/png/pngağ.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="headerall container container-lg container-md container-sm ">
+        <div class="left">
+          <a href="{% url 'index' %}">
+            <img src="../static/img/png/pngağ.png" alt="">
+          </a>
+        </div>
+        <div class="right">
+            <a href="{% url 'index' %}">Ana səhifə</a>
+            <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'about' %}">Haqqımızda</a>
+            <a href="{% url 'contact' %}">Əlaqə</a>
+        </div>
+    </div>
+    <div class="mobile-header">
+      <div class="mobile-logo">
+        <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+      </div>
+      <div class="mobile-bar">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+          
+          <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content">
+                <a href="{% url 'index' %}">Ana səhifə</a>
+                <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'about' %}">Haqqımızda</a>
+                <a href="{% url 'contact' %}">Əlaqə</a>
+                  
+              </div>
+              </div>
+      </div>
+  </div>
+</header>
+
+
+
+<main>
+          <section id="Section1" aria-label="Newest Photos">
+            <div class="carousel col-12 col-sm-12 col-lg-12" >
+              <button class="carousel-button prev"onclick="plusSlides(-1)" ><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="carousel-button next" onclick="plusSlides(1)" ><i class="fa-solid fa-chevron-right"></i></button>
+              <ul data-slides>
+                {% for image in images %}
+                    <li class="slide fade" {% if forloop.first %}data-active{% endif %}>
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    </li>
+                {% endfor %}
+              </ul>
+             
+            </div>
+            
+            
+            <div class="brightness-text">
+              
+              
+              <h2>İşinizi sahə mütəxəssislərinə güvənin</h2>
+              <div class="dots" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+              </div>
+            </div>
+          </section>
+          <section id="Section2">
+            <div class="container container-lg container-md container-sm">
+              <div class="Entry-Info col-12 col-lg-12 col-md-12 col-sm-12">
+                <div  class="info-box info-box1 col-3 col-lg-3 col-md-6 col-sm-12"   data-aos="zoom-in" data-aos-duration="3000">
+                  <div class="info-box-img">
+                    <img src="../static/img/png/feature1.png" alt="">
+                  </div>
+                  <div class="info-box-text">
+                    <h4>Yüksək keyfiyyət</h4>
+                    <p>Müştərilərimizə ən keyfiyyətli məhsul və xidmətlər təqdim etməkdən qürur duyuruq.</p>
+                  </div>
+                  
+                </div>
+                <div class="info-box col-3 col-lg-3 col-md-6 col-sm-12"  data-aos="zoom-in" data-aos-duration="3000">
+                  <div class="info-box-img">
+                    <img src="../static/img/png/feature2.png" alt="">
+                  </div>
+                  <div class="info-box-text">
+                    <h4>Sərfəli qiymət</h4>
+                    <p>Qiymət-performans nisbətinin vacibliyini başa düşürük.</p>
+                  </div>
+                  
+                </div>
+                <div class="info-box col-3 col-lg-3 col-md-6 col-sm-12"  data-aos="zoom-in" data-aos-duration="3000">
+                  <div class="info-box-img">
+                    <img src="../static/img/png/feature3.png" alt="">
+                  </div>
+                  <div class="info-box-text">
+                    <h4>Güvənli iş</h4>
+                    <p>Müştərilərimizə etibarlı və ardıcıl xidmət göstərməyə sadiqik.</p>
+                  </div>
+                  
+                </div>
+                <div  class="info-box info-box4 col-3 col-lg-3 col-md-6 col-sm-12"  data-aos="zoom-in" data-aos-duration="3000">
+                  <div class="info-box-img">
+                    <img src="../static/img/png/feature4.png" alt="">
+                  </div>
+                  <div class="info-box-text">
+                    <h4>Sürətli servis</h4>
+                    <p>Zamanın dəyərli bir mal olduğunu başa düşürük və buna görə də sürətli və səmərəli xidmət göstərmək üçün çox çalışırıq.</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="Section3">
+            <div class="about-home">
+              <div class="top-name">
+                <h3>Haqqımızda</h3>
+              </div>
+              <div class="bottom-all col-12 col-md-12">
+                <div class="left col-6  col-lg-6 col-md-12 col-sm-12 "  >
+                  <img data-aos="fade-right" data-aos-duration="3000" src="../static/img/png/truck-about.png" alt="">
+                </div>
+                <div class="right col-6 col-lg-6 col-md-12 col-sm-12  ">
+                  <h5>İşini sahə mütəxəssislərinin əllərinə burax.</h5>
+                  <p class="top-text">35 illik mühəndislik təcrübəsinə əsaslanaraq  2016- cı ildə  fəliyyətə fiziki şəxs Qüdrət Əliyev tərəfindən başladılan şirkətimiz 6 il ərzində keyfiyyətli və müştəri məmnuniyyətli xidmət göstərərək bir çox böyük şirkətlərlə işbirliyinə imza atmışdır. Bu uğurlara köklənərək 2022-ci ildə hüquqi şəxs qismində  AVKONSTE MMC şirkətinin əsası qoyulmuşdur.</p>
+                  <div class="about-mini-info">
+                    <div class="mini-box">
+                      <span>5 il</span>
+                      <p>Sahə təcrübəsi</p>
+                    </div>
+                    <div class="mini-box">
+                      <span>18-dən çox</span>
+                      <p>Professional işçi</p>
+                    </div>
+                    <div class="mini-box">
+                      <span>15-dən çox</span>
+                      <p>Partnyor</p>
+                    </div>
+                    <div class="mini-box">
+                      <span>30 il</span>
+                      <p>Mühəndis təcrübəsi</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="Section4"> 
+            <div class="container container-lg container-md container-sm">
+              <div data-aos="zoom-in" data-aos-duration="3000" class="top-text">
+                <h3>Xİdmətlərimiz</h3>
+              <p>Sizin üçün elədiklərimiz</p>
+              </div>
+              <div class="all col-12 col-lg-12 col-md-12 col-sm-12">
+                <div data-aos="zoom-in" data-aos-duration="1000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                    <img src="{{ image_url_one }}" alt="{{ image_url_one.title }}">
+                <div class="box-text">
+                    <h5>{{ title_one }}</h5>
+                    <p>{{ text_one }}</p>
+                </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="2000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                    <img src="{{ image_url_two }}" alt="{{ image_url_two.title }}">
+                <div class="box-text">
+                    <h5>{{ title_two }}</h5>
+                    <p>{{ text_two }}</p>
+                </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="3000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                    <img src="{{ image_url_third }}" alt="{{ image_url_third.title }}">
+                <div class="box-text">
+                    <h5>{{ title_third }}</h5>
+                    <p>{{ text_third }}</p>
+                </div>
+                </div>
+              </div>
+              
+              <a href="{% url 'services' %}"><button  data-aos="flip-left" data-aos-duration="1000" class="btn-bottom"> Hamısını gör </button></a>
+            </div>
+          </section>
+</main>
+
+
+<div onclick="OpenFixedBtn()" class="mobile-info-button">
+  <i class="fa-solid fa-info"></i>
+  <div class="mobile-content">
+      <div class="top">
+          <a target="_blank" href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a target="_blank" href="https://www.instagram.com/avkonste/"><i style="margin-left: 15px;" class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="bottom">
+          <a target="_blank" href="https://t.me/avkonste"><i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i></a>
+      </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="container container-lg container-md container-sm">
+    <section id="SectionFooter">
+      <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="footer-logo">
+            <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+        </div>
+        <div class="footer-text">
+          <p>Biz sizi sərfəli və vaxtında yola qaytara bilərik.</p>
+        </div>
+        <div class="footer-icons">
+          <a target="_blank" href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a target="_blank" href="https://www.instagram.com/avkonste/"><i  class="fa-brands fa-instagram"></i></a>
+          <a target="_blank" href="https://t.me/avkonste"><i   class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="right col-6 col-lg-6 col-md-6 col-sm-12">
+        <h5>Əlaqə</h5>
+        <div class="footer-contact-us">
+          <div class="contact-us-mini-info">
+            <p>Phone:</p>
+            <p>+994 70-885-13-22 </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Email:</p>
+            <p>avkonste@gmail.com</p>
+            <p> </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar 26, Sumqayit</p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar, Sumqayit</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+  </div>
+  <div class="footer-end">
+    <hr >
+      <p>© 2023 Transport, All rights reserved.  </p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="../static/js/app.js"></script>
+
+</body>
+</html>

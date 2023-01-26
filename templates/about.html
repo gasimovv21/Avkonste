@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avkonste</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="icon" href="../static/img/png/pngağ.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<header style="background-color: #282828;">
+    <div class="headerall container container-lg container-md container-sm ">
+        <div class="left">
+            <a href="{% url 'index' %}">
+                <img src="../static/img/png/pngağ.png" alt="">
+            </a>
+        </div>
+        <div class="right">
+            <a href="{% url 'index' %}">Ana səhifə</a>
+            <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'about' %}">Haqqımızda</a>
+            <a href="{% url 'contact' %}">Əlaqə</a>
+        </div>
+        
+
+
+    </div>
+
+    <div class="mobile-header">
+      <div class="mobile-logo">
+        <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+      </div>
+      <div class="mobile-bar">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+          
+          <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content">
+                <a href="{% url 'index' %}">Ana səhifə</a>
+                <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'about' %}">Haqqımızda</a>
+                <a href="{% url 'contact' %}">Əlaqə</a>
+                  
+              </div>
+              </div>
+      </div>
+  </div>
+</header>
+
+<main>
+          
+          <section id="AboutPage">
+           <div class="container">
+            <div class="all">
+              <div class="left  col-6 col-md-12 col-sm-12">
+                <div class="top-name" data-aos="fade-right" data-aos-duration="3000">
+                  <h3 >Haqqımızda</h3>
+                  
+                </div>
+                <div class="bottom-text" data-aos="fade-up" data-aos-duration="3000">
+                  <p>35 illik mühəndislik təcrübəsinə əsaslanaraq  2016- cı ildə  fəliyyətə fiziki şəxs Qüdrət Əliyev tərəfindən başladılan şirkətimiz 6 il ərzində keyfiyyətli və müştəri məmnuniyyətli xidmət göstərərək bir çox böyük şirkətlərlə işbirliyinə imza atmışdır. Bu uğurlara köklənərək 2022-ci ildə hüquqi şəxs qismində  AVKONSTE MMC şirkətinin əsası qoyulmuşdur. </p>
+                  <h3>VİZYONUMUZ</h3>
+                  <p>Daim inkişaf etmək və yeni texnologiyalarla yadda qalmaq!</p>
+                  <h3>MİSSİYAMIZ</h3>
+                  <p>Fəaliyyətimiz və keyfiyyətimizlə müştərilərimiz, işçilərimiz və cəmiyyət qarşısında etibar, güvən və dəyərlərimizi artırmaq!</p>
+                  <h3>ƏSAS DƏYƏRLƏRİMİZ</h3>
+                  <p>Keyfiyyət, etibarlılıq, prinsipiallıq və dürüstlük.
+
+                    MÜŞTƏRİLƏRİMİZ BİZİM ÜÇÜN ÇOX DƏYƏRLİDİR!
+                    Müştərilərimizin tələb və istəklərini  düşündüklərindən daha keyfiyyətli şəkildə ortaya qoymaq;
+                    Müştərilərin tələbatlarını vaxtında və doğru bir şəkildə üzə çıxarmaq;
+                    Müştərilərin mövcud (və ya gələcəkdəki) ehtiyac və tələbatlarını tam qarşılamaq üçün fərqli və keyfiyyətli xidmət  təklif etmək;
+                    Müştəri ilə tez-tez əlaqədə olmaqla baş verə biləcək problemləri qabaqcadan görərək hərəkət etmək və müştəri məmnuniyyətini əsas hədəfə çevirmək!</p>
+                </div>
+              </div>
+              <div class="right col-6 col-md-12 col-sm-12">
+                
+                <div class="flips-all">
+                    {% for image in images %}
+                      <div class="col-6 col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="flip-card1" data-aos="fade-down-right" data-aos-duration="3000">
+                          <div class="flip-card-inner1">
+                            <div class="flip-card-front1">
+                              <img src="{{ image.firstupfront.url }}" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back1">
+                              <img src="{{ image.firstupback.url }}" alt="Avatar">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="flip-card1" data-aos="fade-down-right" data-aos-duration="3000">
+                          <div class="flip-card-inner1">
+                            <div class="flip-card-front1">
+                              <img src={{ image.secondupfront.url }} alt="Avatar">
+                            </div>
+                            <div class="flip-card-back1">
+                              <img src="{{ image.secondupback.url }}" alt="Avatar" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="flip-card1" data-aos="fade-down-right" data-aos-duration="3000">
+                          <div class="flip-card-inner1">
+                            <div class="flip-card-front1">
+                              <img src="{{ image.firstdownfront.url }}" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back1">
+                              <img src="{{ image.firstdownback.url }}" alt="Avatar" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 col-lg-6 col-md-6 col-sm-12 ">
+                        <div class="flip-card1" data-aos="fade-down-right" data-aos-duration="3000">
+                          <div class="flip-card-inner1">
+                            <div class="flip-card-front1">
+                              <img src="{{ image.seconddownfront.url }}" alt="Avatar">
+                            </div>
+                            <div class="flip-card-back1">
+                              <img src="{{ image.seconddownback.url }}" alt="Avatar" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+              </div>
+            </div>
+           </div>
+          </section>
+         
+</main>
+
+
+<div onclick="OpenFixedBtn()" class="mobile-info-button">
+  <i class="fa-solid fa-info"></i>
+  <div class="mobile-content">
+      <div class="top">
+          <a href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/avkonste/"><i style="margin-left: 15px;" class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="bottom">
+          <i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i>
+      </div>
+       
+      
+  </div>
+</div>
+
+<footer>
+  <div class="container container-lg container-md container-sm">
+    <section id="SectionFooter">
+      <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="footer-logo">
+            <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+        </div>
+        <div class="footer-text">
+          <p>Biz sizi sərfəli və vaxtında yola qaytara bilərik.</p>
+        </div>
+        <div class="footer-icons">
+          <a target="_blank" href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a target="_blank" href="https://www.instagram.com/avkonste/"><i  class="fa-brands fa-instagram"></i></a>
+          <a target="_blank" href="https://t.me/avkonste"><i   class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="right col-6 col-lg-6 col-md-6 col-sm-12">
+        <h5>Əlaqə</h5>
+        <div class="footer-contact-us">
+          <div class="contact-us-mini-info">
+            <p>Phone:</p>
+            <p>+994 70-885-13-22 </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Email:</p>
+            <p>avkonste@gmail.com</p>
+            <p> </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar 26, Sumqayit</p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar, Sumqayit</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+  </div>
+  <div class="footer-end">
+    <hr >
+      <p>© 2023 Transport, All rights reserved.  </p>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="../static/js/app.js"></script>
+
+</body>
+</html>

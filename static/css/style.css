@@ -71,6 +71,11 @@ header .mobile-header .mobile-logo img {
   -webkit-animation: logoload 4s 0s alternate;
           animation: logoload 4s 0s alternate;
 }
+header .mobile-header .mobile-logo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
 @keyframes logoload {
   from {
     transform: rotate(0);

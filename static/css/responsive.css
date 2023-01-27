@@ -76,13 +76,13 @@
         display: none;       
     }
     #SectionFooter .right .contact-us-mini-info p{
-        font-size: 20px !important;
+        font-size: 16px !important;
     }
     .headerall{
         display: none !important;
     }
     .mobile-header{
-        display: flex !important;
+        display: block !important;
     }
     .brightness-text{
         padding: 0px 0px !important;
@@ -192,6 +192,9 @@
         border-top-left-radius: 20px !important;
         border-bottom-left-radius: 0px !important;
         border-bottom-right-radius: 0px !important;
+        }
+        #Section4 .top-text h3{
+            font-size: 44px !important;
         }
 }
 

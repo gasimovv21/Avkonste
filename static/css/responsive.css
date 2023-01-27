@@ -82,7 +82,7 @@
         display: none !important;
     }
     .mobile-header{
-        display: block !important;
+        display: flex !important;
     }
     .brightness-text{
         padding: 0px 0px !important;

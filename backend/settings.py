@@ -10,7 +10,7 @@ SECRET_KEY = 'coevnf71tncg7+!zk+5g8&av$ad6vfjsr3m7jcj3r8fv1!^^@'
 
 DEBUG = False
 
-ALLOWED_HOSTS = "*"
+ALLOWED_HOSTS = ['165.232.122.174', 'localhost', 'avkonste.com', '*'] 
 
 INSTALLED_APPS = [
     'django.contrib.admin',

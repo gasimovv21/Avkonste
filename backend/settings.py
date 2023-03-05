@@ -8,7 +8,11 @@ load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY', default="*")
 
+<<<<<<< HEAD
 DEBUG = os.getenv('DEBUG', default=False)
+=======
+DEBUG = True
+>>>>>>> 57e7a52 (Trying to fix settings.py)
 
 ALLOWED_HOSTS = ['165.232.122.174', 'localhost', 'avkonste.com', '*'] 
 

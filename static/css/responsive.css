@@ -82,7 +82,7 @@
         display: none !important;
     }
     .mobile-header{
-        display: block !important;
+        display: flex !important;
     }
     .brightness-text{
         padding: 0px 0px !important;
@@ -193,8 +193,6 @@
         border-bottom-left-radius: 0px !important;
         border-bottom-right-radius: 0px !important;
         }
-        #Section4 .top-text h3{
-            font-size: 44px !important;
-        }
+        
 }
 

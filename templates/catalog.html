@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avkonste</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/catalog.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="icon" href="../static/img/png/pngağ.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<header style="background-color: #282828;">
+    <div class="headerall container container-lg container-md container-sm ">
+        <div class="left">
+          <a href="index.html">
+                <img src="../static/img/png/pngağ.png" alt="">
+            </a>
+        </div>
+        <div class="right">
+          <a href="{% url 'index' %}">Ana səhifə</a>
+          <a href="{% url 'services' %}">Xidmətlərimiz</a>
+          <a href="{% url 'catalog' %}">Kataloq</a>
+          <a href="{% url 'about' %}">Haqqımızda</a>
+          <a href="{% url 'contact' %}">Əlaqə</a>
+        </div>
+        
+
+
+    </div>
+
+    <div class="mobile-header">
+      <div class="mobile-logo">
+        <a href="index.html"><img src="../static/img/png/pngağ.png" alt=""></a>
+      </div>
+      <div class="mobile-bar">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+          
+          <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content">
+                <a href="{% url 'index' %}">Ana səhifə</a>
+                <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
+                <a href="{% url 'about' %}">Haqqımızda</a>
+                <a href="{% url 'contact' %}">Əlaqə</a>
+                  
+              </div>
+              </div>
+      </div>
+  </div>
+</header>
+
+
+<main>
+
+    <section id="Catalog">
+
+        <div class="container">
+          <h1>Kataloq</h1>
+          <div id="catalog-list">
+            <button class="btn">Evakuator</button>
+            <button class="btn">Konteyner</button>
+            <button class="btn">Masin</button>
+            <button class="btn">Tank</button>
+            <button class="btn">Cen</button>
+          </div>
+            <div class="all-catalog">
+                <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+                    <div class="item-image col-4 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+                        <img src="../static/img/jpg/truck-1.jpg" alt="">
+                    </div>
+                    <div class="item-info col-8 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+                        <h2>Evakuator 7</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis atque nostrum possimus minima in deserunt, accusantium architecto fugiat. Doloribus, sapiente?</p>
+                        
+                        <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+                <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+                  <div class="item-image col-4 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+                      <img src="../static/img/jpg/truck-1.jpg" alt="">
+                  </div>
+                  <div class="item-info col-8 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+                      <h2>Evakuator 7</h2>
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis atque nostrum possimus minima in deserunt, accusantium architecto fugiat. Doloribus, sapiente?</p>
+                      
+                      <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                  </div>
+              </div>
+              <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+                <div class="item-image col-4 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+                    <img src="../static/img/jpg/truck-1.jpg" alt="">
+                </div>
+                <div class="item-info col-8 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+                    <h2>Evakuator 7</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis atque nostrum possimus minima in deserunt, accusantium architecto fugiat. Doloribus, sapiente?</p>
+                    
+                    <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </div>
+            <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+              <div class="item-image col-4 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+                  <img src="../static/img/jpg/truck-1.jpg" alt="">
+              </div>
+              <div class="item-info col-8 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+                  <h2>Evakuator 7</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis atque nostrum possimus minima in deserunt, accusantium architecto fugiat. Doloribus, sapiente?</p>
+                  
+                  <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+              </div>
+          </div>
+              
+
+            </div>
+        </div>
+    </section>
+         
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div onclick="OpenFixedBtn()" class="mobile-info-button">
+  <i class="fa-solid fa-info"></i>
+  <div class="mobile-content">
+      <div class="top">
+          <a href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/avkonste/"><i style="margin-left: 15px;" class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="bottom">
+          <i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i>
+      </div>
+       
+      
+  </div>
+</div>
+
+
+
+
+
+<footer>
+  <div class="container container-lg container-md container-sm">
+    <section id="SectionFooter">
+      <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="footer-logo">
+          <a href="./index.html"><img src="../static/img/png/pngağ.png" alt=""></a>
+        </div>
+        <div class="footer-text">
+          <p>Biz sizi sərfəli və vaxtında yola qaytara bilərik.</p>
+        </div>
+        <div class="footer-icons">
+          <a target="_blank" href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a target="_blank" href="https://www.instagram.com/avkonste/"><i  class="fa-brands fa-instagram"></i></a>
+          <a target="_blank" href="https://t.me/avkonste"><i   class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="right col-6 col-lg-6 col-md-6 col-sm-12">
+        <h5>Əlaqə</h5>
+        <div class="footer-contact-us">
+          <div class="contact-us-mini-info">
+            <p>Phone:</p>
+            <p>+994 70-885-13-22 </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar 26</p>
+            <p> </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Email:</p>
+            <p>avkonste@gmail.com</p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Inshaatchilar, Sumqayit</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    
+  </div>
+  <div class="footer-end">
+    <hr >
+      <p>© 2023 Transport, All rights reserved.  </p>
+  </div>
+</footer>
+<script>
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("catalog-list");
+  var btns = header.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) { 
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+    });
+  }
+  </script>
+
+
+</body>
+</html>

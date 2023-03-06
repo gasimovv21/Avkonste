@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY', default="*")
+SECRET_KEY = 'coevnf71tncg7+!zk+5g8&av$ad6vfjsr3m7jcj3r8fv1!^^@'
 
-DEBUG = os.getenv('DEBUG', default=False)
+DEBUG = True
 
 ALLOWED_HOSTS = ['165.232.122.174', 'localhost', 'avkonste.com', '*'] 
 

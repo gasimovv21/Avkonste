@@ -255,3 +255,12 @@
         margin-bottom: 30px !important;
     }
 }
+
+
+
+@media (max-width:582px ){
+    .btn {
+        
+        min-width: 49% !important;
+      }
+}

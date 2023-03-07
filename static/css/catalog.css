@@ -10,11 +10,11 @@ main #Catalog .container #catalog-list {
   margin-bottom: 50px;
 }
 main #Catalog .container #catalog-list .btn {
-  margin: 10px 4px;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  min-width: 19%;
   border: none;
   outline: none;
-  padding: 8px 16px;
-  background-color: #f1f1f1;
   cursor: pointer;
   font-size: 18px;
   transition: 0.4s;

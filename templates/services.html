@@ -29,6 +29,7 @@
         <div class="right">
             <a href="{% url 'index' %}">Ana səhifə</a>
             <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'catalog' %}">Kataloq</a>
             <a href="{% url 'about' %}">Haqqımızda</a>
             <a href="{% url 'contact' %}">Əlaqə</a>
         </div>
@@ -49,6 +50,7 @@
               <div class="overlay-content">
                 <a href="{% url 'index' %}">Ana səhifə</a>
                 <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
                 <a href="{% url 'about' %}">Haqqımızda</a>
                 <a href="{% url 'contact' %}">Əlaqə</a>
               </div>
@@ -75,10 +77,11 @@
                     <div class="service reverseforservices" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% endif %}
                     <div class="left">
-                        <img src="{{ service.image.url }}" alt="">
+                      <a href="{% url 'catalog' %}?tag={{ service.tag }}"><img src="{{ service.image.url }}" alt=""></a>
                     </div>
                     <div class="right">
                         <h2>{{ service.title }}</h2>
+                        <p>#{{ service.tag }}</p>
                         <p>{{ service.text }}</p>
                     </div>
                 </div>

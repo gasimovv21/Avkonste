@@ -151,4 +151,19 @@
     right: 35px;
     }
   }
-
+  @-webkit-keyframes catalog-img-load {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+  }
+  @keyframes catalog-img-load {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate3d(0, 1, 0, 360deg);
+    }
+  }

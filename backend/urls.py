@@ -10,13 +10,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("home.urls")),
     path('', include("services.urls")),
-    path('', include("about.urls"))
+    path('', include("about.urls")),
+    path('', include("catalog.urls"))
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 handler404 = handler404
 handler403 = handler403

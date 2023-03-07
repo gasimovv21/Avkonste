@@ -39,7 +39,7 @@
         <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
       </div>
       <div class="mobile-bar">
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
           
           <div id="myNav" class="overlay">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -67,7 +67,7 @@
           <div class="all-catalog">
             {% for sub_service in sub_services %}
             <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12" data-tag="{{ sub_service.service.tag }}">
-              <div class="row">
+              {% comment %} <div class="row"> {% endcomment %}
                 <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
                   <img src="{{ sub_service.image.url }}" alt="">
                 </div>
@@ -76,7 +76,7 @@
                   <p>{{ sub_service.text }}</p>
                   <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
                 </div>
-              </div>
+              {% comment %} </div> {% endcomment %}
             </div>
             {% endfor %}
           </div>                 
@@ -101,7 +101,7 @@
     <section id="SectionFooter">
       <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
         <div class="footer-logo">
-          <a href="./index.html"><img src="../static/img/png/pngağ.png" alt=""></a>
+          <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
         </div>
         <div class="footer-text">
           <p>Biz sizi sərfəli və vaxtında yola qaytara bilərik.</p>
@@ -164,7 +164,7 @@
       // Check if the sub-service's tag matches the selected tag
       if (subService.getAttribute('data-tag') === tag) {
         // If it matches, show the sub-service
-        subService.style.display = 'block';
+        subService.style.display = 'flex';
       } else {
         // If it doesn't match, hide the sub-service
         subService.style.display = 'none';
@@ -172,5 +172,6 @@
     });
   }  
 </script> 
+<script src="../static/js/app.js"></script>
 </body>
 </html>

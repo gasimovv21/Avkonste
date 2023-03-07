@@ -71,13 +71,14 @@
         </div>
         <div class="bottom-all">
             {% for service in services %}
+              <a style="text-decoration:none;"href="{% url 'catalog' %}?tag={{ service.tag }}">
                 {% if forloop.counter0|divisibleby:2 %}
                     <div class="service" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% else %}
                     <div class="service reverseforservices" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% endif %}
                     <div class="left">
-                      <a href="{% url 'catalog' %}?tag={{ service.tag }}"><img src="{{ service.image.url }}" alt=""></a>
+                      <img src="{{ service.image.url }}" alt="">
                     </div>
                     <div class="right">
                         <h2>{{ service.title }}</h2>
@@ -85,6 +86,7 @@
                         <p>{{ service.text }}</p>
                     </div>
                 </div>
+              </a>
             {% endfor %}
         </div>
       </div>

@@ -61,13 +61,12 @@
           <h1>Kataloq</h1>
           <div id="catalog-list">
             {% for tag in tags %}
-            <button class="btn" onclick="filterSubServices('{{ tag }}')">{{ tag }}</button>
+            <a style="text-decoration:none;" href="{% url 'catalog' %}?tag={{tag}}"><button class="btn">{{ tag }}</button></a>
             {% endfor %}
           </div>
           <div class="all-catalog">
             {% for sub_service in sub_services %}
-            <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12" data-tag="{{ sub_service.service.tag }}">
-              {% comment %} <div class="row"> {% endcomment %}
+            <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
                 <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
                   <img src="{{ sub_service.image.url }}" alt="">
                 </div>
@@ -76,7 +75,6 @@
                   <p>{{ sub_service.text }}</p>
                   <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
                 </div>
-              {% comment %} </div> {% endcomment %}
             </div>
             {% endfor %}
           </div>                 
@@ -116,19 +114,19 @@
         <h5>Əlaqə</h5>
         <div class="footer-contact-us">
           <div class="contact-us-mini-info">
-            <p>Phone:</p>
+            <p>Telefon:</p>
             <p>+994 70-885-13-22 </p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar 26</p>
+            <p>Email:</p>
+            <p>info@avkonste.com</p>
             <p> </p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Email:</p>
-            <p>avkonste@gmail.com</p>
+            <p>İnshaatchlar 26,sumqayıt,Azərbaycan</p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar, Sumqayit</p>
+            <p><a style="color:#595F67; text-decoration:none;" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.7917692974693!2d49.64107359515874!3d40.597119284842414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030974415bf4bff%3A0xe9f1013197f61016!2sAvkonste!5e0!3m2!1sen!2s!4v1674531506614!5m2!1sen!2s">Konum</a></p>
             <p></p>
           </div>
         </div>
@@ -163,11 +161,13 @@
     subServices.forEach((subService) => {
       // Check if the sub-service's tag matches the selected tag
       if (subService.getAttribute('data-tag') === tag) {
-        // If it matches, show the sub-service
+        // If it matches, show the sub-service and add the active class
         subService.style.display = 'flex';
+        subService.classList.add('active');
       } else {
-        // If it doesn't match, hide the sub-service
+        // If it doesn't match, hide the sub-service and remove the active class
         subService.style.display = 'none';
+        subService.classList.remove('active');
       }
     });
   }  

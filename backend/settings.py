@@ -6,9 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY', default="*")
+SECRET_KEY = 'coevnf71tncg7+!zk+5g8&av$ad6vfjsr3m7jcj3r8fv1!^^@'
 
-DEBUG = os.getenv('DEBUG', default=False)
+DEBUG = False
 
 ALLOWED_HOSTS = ['165.232.122.174', 'localhost', 'avkonste.com', '*'] 
 
@@ -54,24 +54,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('POSTGRES_USER'),
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-            'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT')
-        }
-    }
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'avkonste',
+       'USER': 'avkonste',
+       'PASSWORD': 'avkonste2101',
+       'HOST': '127.0.0.1',
+       'PORT': '5432'
+   }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

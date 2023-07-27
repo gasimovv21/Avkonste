@@ -93,7 +93,6 @@
                         <i class="fa-solid fa-chevron-left"></i>
                       </div>
                       <div class="slider">
-                          <!-- БЕРИ ТОЛЬКО АДНУ slider__item -->
                           {% for image in images %}
                             <div class="slider__item">
                               <img src="{{ image.image.url }}" alt="">
@@ -104,7 +103,6 @@
                         <i class="fa-solid fa-chevron-right"></i>
                       </div>
                     </div>
-                    <!-- carusel end -->
                     <div class="content-text">
                       <p>{{ sub_service_detail.text }}</p>
                     </div>
@@ -166,7 +164,7 @@
           <section id="SectionFooter">
             <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
               <div class="footer-logo">
-                <a href="./index.html"
+                <a href="{% url 'index' %}"
                   ><img src="/static/img/png/pngağ.png" alt=""
                 /></a>
               </div>

@@ -21,3 +21,9 @@ if settings.DEBUG:
 handler404 = handler404
 handler403 = handler403
 handler505 = handler505
+
+admin.site.site_header = 'Avkonste MMC'
+
+admin.site.site_title = 'Avkonste MMC'
+
+admin.site.index_title = 'Avkonste MMC administrasiyası'

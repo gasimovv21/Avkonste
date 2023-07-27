@@ -1,0 +1,49 @@
+#ServicesPage {
+  background: #D6D6D6;
+  text-align: center;
+  padding: 150px 0px;
+}
+#ServicesPage .all .top-text {
+  margin-bottom: 50px;
+}
+#ServicesPage .all .top-text h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  color: rgba(0, 0, 0, 0.87);
+}
+#ServicesPage .all .bottom-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#ServicesPage .all .bottom-all .left iframe {
+  width: 100%;
+}
+#ServicesPage .all .bottom-all .right ul {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+#ServicesPage .all .bottom-all .right ul li {
+  padding: 27px 0px;
+  background-color: white;
+  transition: 1s;
+}
+#ServicesPage .all .bottom-all .right ul li:hover {
+  cursor: pointer;
+  background-color: #282828;
+}
+#ServicesPage .all .bottom-all .right ul li:hover a {
+  color: white;
+}
+#ServicesPage .all .bottom-all .right ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #282828;
+}
+#ServicesPage .all .bottom-all .right ul li i {
+  padding-right: 20px;
+}/*# sourceMappingURL=contact.css.map */

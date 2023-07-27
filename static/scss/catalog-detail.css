@@ -1,0 +1,49 @@
+main {
+  background-color: #D6D6D6;
+  padding: 100px 0px;
+}
+main #Catalog-detail .carousel-button {
+  position: absolute;
+  z-index: 2;
+  top: 35% !important;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.405);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  transition: 0.4s;
+}
+main #Catalog-detail .carousel-button:hover {
+  transform: scale(1.2);
+  color: black;
+  background-color: white;
+}
+main #Catalog-detail .carousel-button.prev {
+  left: -5% !important;
+}
+main #Catalog-detail .carousel-button.next {
+  right: -5% !important;
+}
+main #Catalog-detail .images-box {
+  width: 100%;
+  height: 500px;
+}
+main #Catalog-detail .images-box ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  height: 400px;
+}
+main #Catalog-detail .images-box ul li {
+  padding: 10px 10px;
+  list-style-type: none;
+}
+main #Catalog-detail .images-box ul li img {
+  width: 100%;
+  max-height: 180px !important;
+  min-height: 180px !important;
+}/*# sourceMappingURL=catalog-detail.css.map */

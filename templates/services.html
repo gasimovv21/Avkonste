@@ -71,7 +71,7 @@
         </div>
         <div class="bottom-all">
             {% for service in services %}
-              <a style="text-decoration:none;" href="{% url 'catalog' %}?tag={{service.tag}}">
+              <a style="text-decoration:none;" href="{% url 'catalog' %}"> {% comment %} ?tag={{service.tag}} {% endcomment %}
                 {% if forloop.counter0|divisibleby:2 %}
                     <div class="service" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% else %}
@@ -82,7 +82,6 @@
                     </div>
                     <div class="right">
                         <h2>{{ service.title }}</h2>
-                        <p>#{{ service.tag }}</p>
                         <p>{{ service.text }}</p>
                     </div>
                 </div>

@@ -7,6 +7,9 @@ main #Catalog .container h1 {
   margin: 50px 0px;
 }
 main #Catalog .container #catalog-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 50px;
 }
 main #Catalog .container #catalog-list .btn {

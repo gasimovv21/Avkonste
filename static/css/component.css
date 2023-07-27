@@ -123,6 +123,7 @@
     margin-top: 30px;
   }
   
+  /* burani deyis */
   .overlay a {
     padding: 8px;
     text-decoration: none;
@@ -130,7 +131,10 @@
     color:  #F4F4F4;;
     display: block;
     transition: 0.3s;
+    font-family: 'REM', sans-serif;
+font-family: 'Roboto', sans-serif;
   }
+  /* end */
   
   .overlay a:hover, .overlay a:focus {
     color:  gray;
@@ -151,19 +155,4 @@
     right: 35px;
     }
   }
-  @-webkit-keyframes catalog-img-load {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate3d(0, 1, 0, 360deg);
-    }
-  }
-  @keyframes catalog-img-load {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate3d(0, 1, 0, 360deg);
-    }
-  }
+

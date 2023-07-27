@@ -1,3 +1,4 @@
+import os
 from django.db import models
 
 class Services(models.Model):
@@ -17,6 +18,9 @@ class Services(models.Model):
         ordering = ('title',)
         verbose_name = 'Xidmət'
         verbose_name_plural = 'Xidmətlər'
+
+    def __str__(self):
+        return f'{self.title}'
 
 
 class SubService(models.Model):
@@ -45,3 +49,47 @@ class SubService(models.Model):
         ordering = ('title',)
         verbose_name = 'Sub-xidmət'
         verbose_name_plural = 'Sub-xidmətlər'
+
+    def __str__(self):
+        return f'{self.title}'
+
+
+class SubServiceDetailImageModel(models.Model):
+    image = models.ImageField(
+        verbose_name='Sub-service-Ətraflı üçün şəkil',
+        upload_to='subservices_images_detail',
+        default=True,
+    )
+
+    class Meta:
+        verbose_name = 'şəkil'
+        verbose_name_plural = 'şəkiler'
+
+    def __str__(self):
+        return os.path.basename(self.image.name)
+
+class SubServiceDetail(models.Model):
+    images = models.ManyToManyField(
+        SubServiceDetailImageModel,
+        verbose_name='Фотографии', 
+        blank=True,
+    )
+    text = models.TextField(
+        verbose_name='Sub-service-Ətraflı üçün mətn',
+        help_text='Sub-service-Ətraflı üçün mətnini əlavə edin!'
+    )
+    sub_service = models.ForeignKey(
+        SubService,
+        on_delete=models.CASCADE,
+        related_name='details',
+        verbose_name='Əlaqəli alt xidmət Ətraflı',
+        help_text='Əlaqəli alt xidmət',
+    )
+
+    class Meta:
+        ordering = ('text',)
+        verbose_name = 'Ətraflı Əlaqəli alt xidmət'
+        verbose_name_plural = 'Ətraflı Əlaqəli alt xidmət'
+
+    def __str__(self):
+        return f'{self.text}'

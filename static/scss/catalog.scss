@@ -1,0 +1,108 @@
+main {
+    padding: 100px 0px;
+    background-color: #D6D6D6;
+
+    #Catalog{
+        .container{
+            h1{
+                text-align: center;
+                margin: 50px 0px;
+            }
+            #catalog-list{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+                // .btn {
+                //     margin:  10px 4px;
+                //     border: none;
+                //     outline: none;
+                //     padding: 8px 16px;
+                //     background-color: #f1f1f1;
+                //     cursor: pointer;
+                //     font-size: 18px;
+                //     transition: 0.4s;
+                //   }
+                  
+                .btn {
+                    margin-bottom: 10px;
+                    background-color: #f1f1f1;
+                    min-width: 19%;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 18px;
+                    transition: 0.4s;
+                  }
+                  
+                  .active, .btn:hover {
+                    background-color: #282828;
+                    color: white;
+                    transform: scale(0.9);
+                  }
+            }
+            .all-catalog{
+                .catalog-item{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    border-radius: 10px;
+                    
+                    margin-bottom: 15px;
+                    display: flex;
+                    .item-image{
+                        padding: 5px;
+                        
+                        img{
+                            box-shadow: -2px 5px 11px 0px #0000008a;
+                            border-radius: 10px;
+                            width: 100%;
+                            -webkit-animation: catalog-img-load 2s 0s alternate;
+                            animation: catalog-img-load 2s 0s alternate;
+                            transition: 0.4s;
+                        }
+                        img:hover{
+                            transform: scale(0.9);
+                            cursor: pointer;
+                        }
+                        
+
+                    }
+                    .item-info{
+                        
+                        h2{
+                            margin: 0px auto 10px;
+                            width: 30%;
+                            
+                            padding: 3px 0px ;
+                            background-color: #f1f1f1;
+                            color: #282828;
+                            border-radius: 10px;
+                            text-align: center;
+                        }
+                        margin: 5px 0px;
+                        border-radius: 10px;
+                        padding: 10px 30px;
+                        background-color: #282828;
+                        color: white;
+                        
+                        position: relative;
+                        .catalog-detail-btn{
+                            border: none;
+                            position: absolute;
+                            right: 1.5%;
+                            bottom: 5%;
+                            padding: 10px 25px;
+                            font-weight: 500;
+                            border-radius: 10px;
+                            transition: 0.4s;
+                        }
+                        .catalog-detail-btn:hover{
+                           transform: scale(0.9);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -7,7 +7,7 @@
     <title>Avkonste</title>
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/catalog.css">
+    <link rel="stylesheet" href="../static/scss/catalog.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
     <link rel="stylesheet" href="../static/css/bootstrap.css">
     <link rel="stylesheet" href="../static/css/component.css">
@@ -60,24 +60,27 @@
         <div class="container">
           <h1>Kataloq</h1>
           <div id="catalog-list">
-            {% for tag in tags %}
-            <a style="text-decoration:none;" href="{% url 'catalog' %}?tag={{tag}}"><button class="btn">{{ tag }}</button></a>
+            <button onclick="showAllServices()" id="all-services-btn" class="btn active">Bütün Xidmetler</button>
+            {% for service in services %}
+              <button onclick="showSubServices({{ service.id }})" class="btn" data-sub_service="{{ service.id }}">{{ service.tag }}</button>
             {% endfor %}
           </div>
-          <div class="all-catalog">
+          <div class="all-catalog" id="all-catalog">
             {% for sub_service in sub_services %}
-            <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12">
+              <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12" data-sub_service="{{ sub_service.service.id }}">
                 <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
                   <img src="{{ sub_service.image.url }}" alt="">
                 </div>
                 <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
                   <h2>{{ sub_service.title }}</h2>
                   <p>{{ sub_service.text }}</p>
-                  <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                  <a href="{% url "subservice_detail" pk=sub_service.id %}">
+                    <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                  </a>
                 </div>
-            </div>
+              </div>
             {% endfor %}
-          </div>                 
+          </div>                           
         </div>
     </section>
 </main>
@@ -89,7 +92,7 @@
           <a href="https://www.instagram.com/avkonste/"><i style="margin-left: 15px;" class="fa-brands fa-instagram"></i></a>
       </div>
       <div class="bottom">
-          <i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i>
+        <a href="https://t.me/avkonste"> <i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i></a>
       </div>
       
   </div>
@@ -140,7 +143,7 @@
 </footer>
 <script>
   // Add active class to the current button (highlight it)
-  var header = document.getElementById("catalog-list");
+  {% comment %} var header = document.getElementById("catalog-list");
   var btns = header.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
@@ -150,9 +153,85 @@
     }
     this.className += " active";
     });
+  } {% endcomment %}
+
+
+  // NO REFRESH JS CODE.
+
+  var buttons = document.getElementsByTagName("button");
+  for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+      }
+      this.className += " active";
+      });
   }
+
+  function showAllServices() {
+    const allServicesBtn = document.getElementById('all-services-btn');
+    const servicesContainer = document.getElementById('all-catalog');
+    
+    fetch('/catalog/all/')
+      .then(response => response.json())
+      .then(data => {
+        servicesContainer.innerHTML = '';
+        data.forEach(sub_service => {
+          const serviceEl = document.createElement('div');
+          serviceEl.classList.add('catalog-item', 'col-12', 'col-lg-12', 'col-xxl-12', 'col-xl-12', 'col-md-12', 'col-sm-12');
+          console.log(sub_service)
+          serviceEl.setAttribute('data-sub_service', sub_service.sub_servicesId);
+          serviceEl.innerHTML = `
+            <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+              <img src="${sub_service.image}" alt="">
+            </div>
+            <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+              <h2>${sub_service.title}</h2>
+              <p>${sub_service.text}</p>
+              <a href="/katalog/${sub_service.sub_servicesId}">
+                <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+              </a>
+            </div>
+          `;
+          servicesContainer.appendChild(serviceEl);
+        });
+      })
+      .catch(error => console.error(error));
+  }
+  
+  function showSubServices(serviceId) {
+    const servicesContainer = document.getElementById('all-catalog');
+  
+    fetch(`/catalog/${serviceId}`)
+      .then(response => response.json())
+      .then(data => {
+        servicesContainer.innerHTML = '';
+        data.forEach(sub_service => {
+          const serviceEl = document.createElement('div');
+          serviceEl.classList.add('catalog-item', 'col-12', 'col-lg-12', 'col-xxl-12', 'col-xl-12', 'col-md-12', 'col-sm-12');
+          serviceEl.setAttribute('data-sub_service', sub_service.sub_servicesId);
+          serviceEl.innerHTML = `
+            <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+              <img src="${sub_service.image}" alt="">
+            </div>
+            <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+              <h2>${sub_service.title}</h2>
+              <p>${sub_service.text}</p>
+              <a href="/katalog/${sub_service.sub_servicesId}">
+                <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+              </a>
+            </div>
+          `;
+          servicesContainer.appendChild(serviceEl);
+        });
+      })
+      .catch(error => console.error(error));
+  }
+
+
 </script>
-<script>
+{% comment %} <script>
   function filterSubServices(tag) {
     // Get all sub-service elements
     const subServices = document.querySelectorAll('.catalog-item');
@@ -171,7 +250,7 @@
       }
     });
   }  
-</script> 
+</script>  {% endcomment %}
 <script src="../static/js/app.js"></script>
 </body>
 </html>

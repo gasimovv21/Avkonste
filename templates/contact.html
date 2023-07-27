@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <header style="background-color: #282828;">
@@ -27,6 +28,7 @@
         <div class="right">
             <a href="{% url 'index' %}">Ana səhifə</a>
             <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'catalog' %}">Kataloq</a>
             <a href="{% url 'about' %}">Haqqımızda</a>
             <a href="{% url 'contact' %}">Əlaqə</a>
         </div>
@@ -41,9 +43,11 @@
           
           <div id="myNav" class="overlay">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="{% url 'index' %}" style="width: 70px; position: absolute; top: 25px; left: 25px;"><img width="100%" src="../static/img/png/pngağ.png" alt=""></a>
               <div class="overlay-content">
                 <a href="{% url 'index' %}">Ana səhifə</a>
                 <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
                 <a href="{% url 'about' %}">Haqqımızda</a>
                 <a href="{% url 'contact' %}">Əlaqə</a>
                   
@@ -68,7 +72,7 @@
        <div class="left col-6 col-lg-6 col-md-12 col-sm-12" data-aos="fade-up"
        data-aos-offset="300"
        data-aos-easing="ease-in-sine">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.7917692974693!2d49.64107359515874!3d40.597119284842414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030974415bf4bff%3A0xe9f1013197f61016!2sAvkonste!5e0!3m2!1sen!2s!4v1674531506614!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.4654648498404!2d49.64455235161433!3d40.59755289228376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030970a31d0fd55%3A0x6bb469e1ef667aa9!2sAvkonste%20MMC!5e0!3m2!1sru!2saz!4v1679009340255!5m2!1sru!2saz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
        </div>
        <div class="right col-6 col-lg-6 col-md-12 col-sm-12" data-aos="fade-down"
        data-aos-offset="300"
@@ -78,7 +82,7 @@
           <li><a target="_blank" href="https://www.instagram.com/avkonste/"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
           <li><a target="_blank" href="https://t.me/avkonste"><i class="fa-brands fa-telegram"></i>Telegram</a></li>
           <li><a href="tel:0708851322"><i class="fa-solid fa-phone"></i></i>Mobile</a></li>
-          <li><a href="mailto:avkonste@gmail.com"><i class="fa-solid fa-envelope-circle-check"></i></i>Gmail</a></li>
+          <li><a href="mailto:info@avkonste.com"><i class="fa-solid fa-envelope-circle-check"></i></i>Mail</a></li>
         </ul>
        </div>
         </div>
@@ -126,19 +130,19 @@
         <h5>Əlaqə</h5>
         <div class="footer-contact-us">
           <div class="contact-us-mini-info">
-            <p>Phone:</p>
+            <p>Telefon:</p>
             <p>+994 70-885-13-22 </p>
           </div>
           <div class="contact-us-mini-info">
             <p>Email:</p>
-            <p>avkonste@gmail.com</p>
+            <p>info@avkonste.com</p>
             <p> </p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar 26, Sumqayit</p>
+            <p>İnshaatchlar 26,sumqayıt,Azərbaycan</p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar, Sumqayit</p>
+            <p><a style="color:#595F67; text-decoration:none;" href="https://goo.gl/maps/eJ7Lnp41X4UVLo5z5">Konum</a></p>
             <p></p>
           </div>
         </div>

@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -28,6 +29,7 @@
         <div class="right">
             <a href="{% url 'index' %}">Ana səhifə</a>
             <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'catalog' %}">Kataloq</a>
             <a href="{% url 'about' %}">Haqqımızda</a>
             <a href="{% url 'contact' %}">Əlaqə</a>
         </div>
@@ -41,9 +43,11 @@
           
           <div id="myNav" class="overlay">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="{% url 'index' %}" style="width: 70px; position: absolute; top: 25px; left: 25px;"><img width="100%" src="../static/img/png/pngağ.png" alt=""></a>
               <div class="overlay-content">
                 <a href="{% url 'index' %}">Ana səhifə</a>
                 <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
                 <a href="{% url 'about' %}">Haqqımızda</a>
                 <a href="{% url 'contact' %}">Əlaqə</a>
                   
@@ -67,14 +71,13 @@
                     </li>
                 {% endfor %}
               </ul>
-             
             </div>
             
             
             <div class="brightness-text">
               
               
-              <h2>İşinizi sahə mütəxəssislərinə güvənin</h2>
+              <h2>Avtomobilinizin problemlərinə professional həllər.</h2>
               <div class="dots" style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -137,7 +140,7 @@
               </div>
               <div class="bottom-all col-12 col-md-12">
                 <div class="left col-6  col-lg-6 col-md-12 col-sm-12 "  >
-                  <img data-aos="fade-right" data-aos-duration="3000" src="../static/img/png/truck-about.png" alt="">
+                  <img data-aos="fade-right" data-aos-duration="3000" src="../static/img/png/truck-avkonste.png" alt="">
                 </div>
                 <div class="right col-6 col-lg-6 col-md-12 col-sm-12  ">
                   <h5>İşini sahə mütəxəssislərinin əllərinə burax.</h5>
@@ -156,7 +159,7 @@
                       <p>Partnyor</p>
                     </div>
                     <div class="mini-box">
-                      <span>30 il</span>
+                      <span>35 il</span>
                       <p>Mühəndis təcrübəsi</p>
                     </div>
                     
@@ -173,25 +176,37 @@
               </div>
               <div class="all col-12 col-lg-12 col-md-12 col-sm-12">
                 <div data-aos="zoom-in" data-aos-duration="1000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                  <a href="{% url 'services' %}">
                     <img src="{{ image_url_one }}" alt="{{ image_url_one.title }}">
-                <div class="box-text">
-                    <h5>{{ title_one }}</h5>
-                    <p>{{ text_one }}</p>
-                </div>
+                  </a>
+                  <a href="{% url 'services' %}" style="color: black; text-decoration: none;">
+                    <div class="box-text">
+                        <h5>{{ title_one }}</h5>
+                        <p>{{ text_one }}</p>
+                    </div>
+                  </a>
                 </div>
                 <div data-aos="zoom-in" data-aos-duration="2000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                  <a href="{% url 'services' %}">
                     <img src="{{ image_url_two }}" alt="{{ image_url_two.title }}">
-                <div class="box-text">
-                    <h5>{{ title_two }}</h5>
-                    <p>{{ text_two }}</p>
-                </div>
+                  </a>
+                  <a href="{% url 'services' %}" style="color: black; text-decoration: none;">
+                    <div class="box-text">
+                        <h5>{{ title_two }}</h5>
+                        <p>{{ text_two }}</p>
+                    </div>
+                  </a>
                 </div>
                 <div data-aos="zoom-in" data-aos-duration="3000" class="box col-4 col-lg-4 col-md-12 col-sm-12">
+                  <a href="{% url 'services' %}">
                     <img src="{{ image_url_third }}" alt="{{ image_url_third.title }}">
-                <div class="box-text">
-                    <h5>{{ title_third }}</h5>
-                    <p>{{ text_third }}</p>
-                </div>
+                  </a>
+                  <a href="{% url 'services' %}" style="color: black; text-decoration: none;">
+                    <div class="box-text">
+                      <h5>{{ title_third }}</h5>
+                      <p>{{ text_third }}</p>
+                    </div>
+                  </a>
                 </div>
               </div>
               
@@ -235,19 +250,19 @@
         <h5>Əlaqə</h5>
         <div class="footer-contact-us">
           <div class="contact-us-mini-info">
-            <p>Phone:</p>
+            <p>Telefon:</p>
             <p>+994 70-885-13-22 </p>
           </div>
           <div class="contact-us-mini-info">
             <p>Email:</p>
-            <p>avkonste@gmail.com</p>
+            <p>info@avkonste.com</p>
             <p> </p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar 26, Sumqayit</p>
+            <p>İnshaatchlar 26,sumqayıt,Azərbaycan</p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar, Sumqayit</p>
+            <p><a style="color:#595F67; text-decoration:none;" href="https://goo.gl/maps/eJ7Lnp41X4UVLo5z5">Konum</a></p>
             <p></p>
           </div>
         </div>

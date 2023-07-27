@@ -10,6 +10,8 @@ def index(request):
             return redirect("services")
         elif 'about_btn' in request.POST:
             return redirect("about")
+        elif 'catalog_btn' in request.POST:
+            return redirect("catalog")
         elif 'contact_btn' in request.POST:
             return redirect("contact")
 

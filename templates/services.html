@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <header style="background-color: #282828;">
@@ -29,6 +30,7 @@
         <div class="right">
             <a href="{% url 'index' %}">Ana səhifə</a>
             <a href="{% url 'services' %}">Xidmətlərimiz</a>
+            <a href="{% url 'catalog' %}">Kataloq</a>
             <a href="{% url 'about' %}">Haqqımızda</a>
             <a href="{% url 'contact' %}">Əlaqə</a>
         </div>
@@ -46,9 +48,11 @@
           
           <div id="myNav" class="overlay">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="{% url 'index' %}" style="width: 70px; position: absolute; top: 25px; left: 25px;"><img width="100%" src="../static/img/png/pngağ.png" alt=""></a>
               <div class="overlay-content">
                 <a href="{% url 'index' %}">Ana səhifə</a>
                 <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
                 <a href="{% url 'about' %}">Haqqımızda</a>
                 <a href="{% url 'contact' %}">Əlaqə</a>
               </div>
@@ -69,53 +73,28 @@
         </div>
         <div class="bottom-all">
             {% for service in services %}
+              <a style="text-decoration:none;" href="{% url 'catalog' %}"> {% comment %} ?tag={{service.tag}} {% endcomment %}
                 {% if forloop.counter0|divisibleby:2 %}
                     <div class="service" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% else %}
                     <div class="service reverseforservices" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                 {% endif %}
                     <div class="left">
-                        <img src="{{ service.image.url }}" alt="">
+                      <img src="{{ service.image.url }}" alt="">
                     </div>
                     <div class="right">
                         <h2>{{ service.title }}</h2>
                         <p>{{ service.text }}</p>
                     </div>
                 </div>
+              </a>
             {% endfor %}
         </div>
       </div>
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-         
 </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div onclick="OpenFixedBtn()" class="mobile-info-button">
   <i class="fa-solid fa-info"></i>
   <div class="mobile-content">
@@ -128,11 +107,6 @@
       </div>
   </div>
 </div>
-
-
-
-
-
 <footer>
   <div class="container container-lg container-md container-sm">
     <section id="SectionFooter">
@@ -153,19 +127,19 @@
         <h5>Əlaqə</h5>
         <div class="footer-contact-us">
           <div class="contact-us-mini-info">
-            <p>Phone:</p>
+            <p>Telefon:</p>
             <p>+994 70-885-13-22 </p>
           </div>
           <div class="contact-us-mini-info">
             <p>Email:</p>
-            <p>avkonste@gmail.com</p>
+            <p>info@avkonste.com</p>
             <p> </p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar 26, Sumqayit</p>
+            <p>İnshaatchlar 26,sumqayıt,Azərbaycan</p>
           </div>
           <div class="contact-us-mini-info">
-            <p>Inshaatchilar, Sumqayit</p>
+            <p><a style="color:#595F67; text-decoration:none;" href="https://goo.gl/maps/eJ7Lnp41X4UVLo5z5">Konum</a></p>
             <p></p>
           </div>
         </div>
@@ -183,6 +157,26 @@
 <script>
   AOS.init();
 </script>
+{% comment %} <script>
+  const serviceLinks = document.querySelectorAll('.service-link');
+
+serviceLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const tag = link.dataset.tag;
+    const url = `/katalog/?tag=${tag}`;
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        window.location.href = url;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+  });
+});
+</script> {% endcomment %}
 <script src="../static/js/app.js"></script>
 
 </body>

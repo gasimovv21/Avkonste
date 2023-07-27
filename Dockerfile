@@ -18,4 +18,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Выполнить запуск сервера разработки при старте контейнера.
+<<<<<<< HEAD
 CMD ["python3", "manage.py", "runserver", "0:8000"]
+=======
+<<<<<<< HEAD
+CMD ["python3", "manage.py", "runserver", "0:8000"]
+=======
+CMD ["python3", "manage.py", "runserver", "0:8000"]
+>>>>>>> 7a42cfe (ready for deploy1)
+>>>>>>> origin/main

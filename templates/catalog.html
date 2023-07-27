@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avkonste</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/scss/catalog.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/component.css">
+    <link rel="icon" href="../static/img/png/pngağ.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header style="background-color: #282828;">
+    <div class="headerall container container-lg container-md container-sm ">
+        <div class="left">
+          <a href="{% url 'index' %}">
+                <img src="../static/img/png/pngağ.png" alt="">
+            </a>
+        </div>
+        <div class="right">
+          <a href="{% url 'index' %}">Ana səhifə</a>
+          <a href="{% url 'services' %}">Xidmətlərimiz</a>
+          <a href="{% url 'catalog' %}">Kataloq</a>
+          <a href="{% url 'about' %}">Haqqımızda</a>
+          <a href="{% url 'contact' %}">Əlaqə</a>
+        </div>
+    </div>
+    <div class="mobile-header">
+      <div class="mobile-logo">
+        <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+      </div>
+      <div class="mobile-bar">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+          
+          <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a href="{% url 'index' %}" style="width: 70px; position: absolute; top: 25px; left: 25px;"><img width="100%" src="../static/img/png/pngağ.png" alt=""></a>
+              <div class="overlay-content">
+                <a href="{% url 'index' %}">Ana səhifə</a>
+                <a href="{% url 'services' %}">Xidmətlərimiz</a>
+                <a href="{% url 'catalog' %}">Kataloq</a>
+                <a href="{% url 'about' %}">Haqqımızda</a>
+                <a href="{% url 'contact' %}">Əlaqə</a>
+                  
+              </div>
+              </div>
+      </div>
+  </div>
+</header>
+<main>
+    <section id="Catalog">
+        <div class="container">
+          <h1>Kataloq</h1>
+          <div id="catalog-list">
+            <button onclick="showAllServices()" id="all-services-btn" class="btn active">Bütün Xidmetler</button>
+            {% for service in services %}
+              <button onclick="showSubServices({{ service.id }})" class="btn" data-sub_service="{{ service.id }}">{{ service.tag }}</button>
+            {% endfor %}
+          </div>
+          <div class="all-catalog" id="all-catalog">
+            {% for sub_service in sub_services %}
+              <div class="catalog-item col-12 col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12" data-sub_service="{{ sub_service.service.id }}">
+                <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+                  <img src="{{ sub_service.image.url }}" alt="">
+                </div>
+                <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+                  <h2>{{ sub_service.title }}</h2>
+                  <p>{{ sub_service.text }}</p>
+                  <a href="{% url "subservice_detail" pk=sub_service.id %}">
+                    <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>                           
+        </div>
+    </section>
+</main>
+<div onclick="OpenFixedBtn()" class="mobile-info-button">
+  <i class="fa-solid fa-info"></i>
+  <div class="mobile-content">
+      <div class="top">
+          <a href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/avkonste/"><i style="margin-left: 15px;" class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="bottom">
+        <a href="https://t.me/avkonste"> <i style="margin-top: 15px;"  class="fa-brands fa-telegram"></i></a>
+      </div>
+      
+  </div>
+</div>
+<footer>
+  <div class="container container-lg container-md container-sm">
+    <section id="SectionFooter">
+      <div class="left col-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="footer-logo">
+          <a href="{% url 'index' %}"><img src="../static/img/png/pngağ.png" alt=""></a>
+        </div>
+        <div class="footer-text">
+          <p>Biz sizi sərfəli və vaxtında yola qaytara bilərik.</p>
+        </div>
+        <div class="footer-icons">
+          <a target="_blank" href="https://wa.me/994708851322/"><i  class="fa-brands fa-whatsapp"></i></a>
+          <a target="_blank" href="https://www.instagram.com/avkonste/"><i  class="fa-brands fa-instagram"></i></a>
+          <a target="_blank" href="https://t.me/avkonste"><i   class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="right col-6 col-lg-6 col-md-6 col-sm-12">
+        <h5>Əlaqə</h5>
+        <div class="footer-contact-us">
+          <div class="contact-us-mini-info">
+            <p>Telefon:</p>
+            <p>+994 70-885-13-22 </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>Email:</p>
+            <p>info@avkonste.com</p>
+            <p> </p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p>İnshaatchlar 26,sumqayıt,Azərbaycan</p>
+          </div>
+          <div class="contact-us-mini-info">
+            <p><a style="color:#595F67; text-decoration:none;" href="https://goo.gl/maps/eJ7Lnp41X4UVLo5z5">Konum</a></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="footer-end">
+    <hr >
+      <p>© 2023 Transport, All rights reserved.  </p>
+  </div>
+</footer>
+<script>
+  // Add active class to the current button (highlight it)
+  {% comment %} var header = document.getElementById("catalog-list");
+  var btns = header.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) { 
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+    });
+  } {% endcomment %}
+
+
+  // NO REFRESH JS CODE.
+
+  var buttons = document.getElementsByTagName("button");
+  for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+      }
+      this.className += " active";
+      });
+  }
+
+  function showAllServices() {
+    const allServicesBtn = document.getElementById('all-services-btn');
+    const servicesContainer = document.getElementById('all-catalog');
+    
+    fetch('/catalog/all/')
+      .then(response => response.json())
+      .then(data => {
+        servicesContainer.innerHTML = '';
+        data.forEach(sub_service => {
+          const serviceEl = document.createElement('div');
+          serviceEl.classList.add('catalog-item', 'col-12', 'col-lg-12', 'col-xxl-12', 'col-xl-12', 'col-md-12', 'col-sm-12');
+          console.log(sub_service)
+          serviceEl.setAttribute('data-sub_service', sub_service.sub_servicesId);
+          serviceEl.innerHTML = `
+            <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+              <img src="${sub_service.image}" alt="">
+            </div>
+            <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+              <h2>${sub_service.title}</h2>
+              <p>${sub_service.text}</p>
+              <a href="/katalog/${sub_service.sub_servicesId}">
+                <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+              </a>
+            </div>
+          `;
+          servicesContainer.appendChild(serviceEl);
+        });
+      })
+      .catch(error => console.error(error));
+  }
+  
+  function showSubServices(serviceId) {
+    const servicesContainer = document.getElementById('all-catalog');
+  
+    fetch(`/catalog/${serviceId}`)
+      .then(response => response.json())
+      .then(data => {
+        servicesContainer.innerHTML = '';
+        data.forEach(sub_service => {
+          const serviceEl = document.createElement('div');
+          serviceEl.classList.add('catalog-item', 'col-12', 'col-lg-12', 'col-xxl-12', 'col-xl-12', 'col-md-12', 'col-sm-12');
+          serviceEl.setAttribute('data-sub_service', sub_service.sub_servicesId);
+          serviceEl.innerHTML = `
+            <div class="item-image col-12 col-lg-5 col-xxl-4 col-xl-4 col-md-12 col-sm-11">
+              <img src="${sub_service.image}" alt="">
+            </div>
+            <div class="item-info col-12 col-lg-7 col-xxl-8 col-xl-8 col-md-12 col-sm-11">
+              <h2>${sub_service.title}</h2>
+              <p>${sub_service.text}</p>
+              <a href="/katalog/${sub_service.sub_servicesId}">
+                <button class="catalog-detail-btn">Ətraflı Oxu <i class="fa-solid fa-angles-right"></i></button>
+              </a>
+            </div>
+          `;
+          servicesContainer.appendChild(serviceEl);
+        });
+      })
+      .catch(error => console.error(error));
+  }
+
+
+</script>
+{% comment %} <script>
+  function filterSubServices(tag) {
+    // Get all sub-service elements
+    const subServices = document.querySelectorAll('.catalog-item');
+    
+    // Loop through each sub-service element
+    subServices.forEach((subService) => {
+      // Check if the sub-service's tag matches the selected tag
+      if (subService.getAttribute('data-tag') === tag) {
+        // If it matches, show the sub-service and add the active class
+        subService.style.display = 'flex';
+        subService.classList.add('active');
+      } else {
+        // If it doesn't match, hide the sub-service and remove the active class
+        subService.style.display = 'none';
+        subService.classList.remove('active');
+      }
+    });
+  }  
+</script>  {% endcomment %}
+<script src="../static/js/app.js"></script>
+</body>
+</html>

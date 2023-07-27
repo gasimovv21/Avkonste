@@ -1,0 +1,77 @@
+#AboutPage {
+  background-color: #D6D6D6;
+  padding: 150px 0px 50px;
+}
+#AboutPage .all {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#AboutPage .all .left {
+  padding-right: 20px;
+}
+#AboutPage .all .left .top-name h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 56px;
+  color: rgba(0, 0, 0, 0.87);
+}
+#AboutPage .all .left .bottom-text {
+  margin: 0px;
+  padding: 0px;
+}
+#AboutPage .all .left .bottom-text h3 {
+  margin: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 56px;
+  color: rgba(0, 0, 0, 0.87);
+}
+#AboutPage .all .left .bottom-text p {
+  font-size: 16px;
+  margin: 0px;
+}
+#AboutPage .all .right .flips-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* This container is needed to position the front and back side */
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Position the front and back side */
+  /* Style the front side (fallback if image is missing) */
+  /* Style the back side */
+}
+#AboutPage .all .right .flips-all .flip-card1 {
+  padding: 5px;
+  margin-bottom: 200px;
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+#AboutPage .all .right .flips-all .flip-card-inner1 {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+#AboutPage .all .right .flips-all .flip-card1:hover .flip-card-inner1 {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+#AboutPage .all .right .flips-all .flip-card-front1, #AboutPage .all .right .flips-all .flip-card-back1 {
+  position: absolute;
+  width: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+#AboutPage .all .right .flips-all .flip-card-front1 img, #AboutPage .all .right .flips-all .flip-card-back1 img {
+  width: 100%;
+}
+#AboutPage .all .right .flips-all .flip-card-back1 {
+  transform: rotateY(180deg);
+}/*# sourceMappingURL=about.css.map */

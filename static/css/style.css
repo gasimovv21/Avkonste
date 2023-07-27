@@ -71,7 +71,6 @@ header .mobile-header .mobile-logo img {
   -webkit-animation: logoload 4s 0s alternate;
           animation: logoload 4s 0s alternate;
 }
-
 @keyframes logoload {
   from {
     transform: rotate(0);
@@ -298,7 +297,7 @@ main #Section4 .top-text h3 {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 44px;
+  font-size: 48px;
   line-height: 56px;
   color: #FFFFFF;
 }
